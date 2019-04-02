@@ -44,15 +44,8 @@ public class PlayerInteractivity : MonoBehaviour
 
     private void Awake()
     {
-        if (GameObject.Find("BrokenCar_TextMesh"))
-        {
-            brokenCarText = GameObject.Find("BrokenCar_TextMesh");
-            brokenCarText.GetComponent<MeshRenderer>().enabled = false;
-        }
-        else
-        {
-            Debug.Log("BrokenCar_TextMesh Not Found!");
-        }
+        brokenCarText = GameObject.Find("BrokenCar_TextMesh");
+        brokenCarText.GetComponent<MeshRenderer>().enabled = false;
     }
 
     private void FixedUpdate()
@@ -61,8 +54,6 @@ public class PlayerInteractivity : MonoBehaviour
         Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * maxRange, Color.red);
         
         objectWasDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxRange);
-
-        //ClickHandler();
     }
     private void Update()
     {
@@ -70,31 +61,23 @@ public class PlayerInteractivity : MonoBehaviour
         {
             ClickHandler();
         }
-
-        //TODO: Output Overload for BrokenCar TextMeshPro Object
-        Debug.Log($"BrokenCarText Enabled == {brokenCarText.GetComponent<MeshRenderer>().enabled}");
     }
 
     private void ClickHandler()
     {
+        //TODO: Keeping in place for when other interactive objects are added.
         Debug.Log("Click!");
-
         Debug.Log($"{hitInfo.collider.name} was the object hit");
 
         switch (hitInfo.collider.gameObject.name)
         {
             case "CarBody":
-                Debug.Log("CarBody Clicked!");
-
                 //Display Text for a set period of time
                 StartCoroutine(TextDisplayTimer());
-                
-                //TODO: Used to test whether the Coroutine was skipped
-                Debug.Log($"TextDisplayTimer() Has been skipped!");
-
                 break;
+
             default:
-                Debug.Log("CarBody Not Detected");
+                Debug.Log("No Object Not Detected");
                 break;
         }
     }
