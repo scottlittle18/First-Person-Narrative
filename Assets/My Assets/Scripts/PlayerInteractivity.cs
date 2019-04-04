@@ -76,6 +76,11 @@ public class PlayerInteractivity : MonoBehaviour
                 StartCoroutine(TextDisplayTimer());
                 break;
 
+            case "TempleKeyStorage_Door_Unlocked":
+                //Open Door of the first Temple Key Storage building
+                hitInfo.collider.GetComponent<Door_Unlocked>().OpenDoor();
+                break;
+
             default:
                 Debug.Log("No Object Not Detected");
                 break;
