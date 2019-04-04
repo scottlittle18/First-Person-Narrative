@@ -27,25 +27,25 @@ public class PlayerInteractivity : MonoBehaviour
     private bool objectWasDetected;
 
     //TODO: Hard Coded For Testing
-    private GameObject brokenCarText;
+    private GameObject carText;
 
     IEnumerator TextDisplayTimer()
     {
         Debug.Log("Enumerator Entered");
 
         //Make Text Visible
-        brokenCarText.GetComponent<MeshRenderer>().enabled = true;
+        carText.GetComponent<MeshRenderer>().enabled = true;
         
         yield return new WaitForSecondsRealtime(textDisplayTimer);
 
         //Make Text Invisible
-        brokenCarText.GetComponent<MeshRenderer>().enabled = false;
+        carText.GetComponent<MeshRenderer>().enabled = false;
     }
 
     private void Awake()
     {
-        brokenCarText = GameObject.Find("BrokenCar_TextMesh");
-        brokenCarText.GetComponent<MeshRenderer>().enabled = false;
+        carText = GameObject.Find("Car_TextMesh");
+        carText.GetComponent<MeshRenderer>().enabled = false;
     }
 
     private void FixedUpdate()
