@@ -14,6 +14,7 @@ public class TempleMainDoors : MonoBehaviour
         //rightTempleDoor_Anim = GetComponent<Animator>();
         //templeDoor_Col = GetComponent<BoxCollider>();
     }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
