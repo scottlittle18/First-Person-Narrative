@@ -7,14 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayButtonClicked()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        //int currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        SceneManager.LoadScene(currentScene + 1);
-    }
-
-    public void CreditsButtonClicked()
-    {
-        //SceneManager.LoadScene("CreditsScene");
+        //SceneManager.LoadScene(currentScene + 1);
+        //TODO: Debug
+        Debug.Log("Start Button Clicked!");
     }
 
     public void ExitButtonClicked()
