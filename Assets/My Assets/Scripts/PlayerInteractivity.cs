@@ -75,6 +75,12 @@ public class PlayerInteractivity : MonoBehaviour
             //TODO: Debug
             Debug.Log("Teleportation Anim_Trigger Activated!");
         }
+        else if(hitInfo.collider.tag == "TempleKey")
+        {
+            hitInfo.collider.GetComponent<Animator>().SetTrigger("Teleport");
+            //TODO: Debug
+            Debug.Log("Temple Key Teleporter Activated!");
+        }
         else
         {
             switch (hitInfo.collider.gameObject.name)

@@ -21,5 +21,8 @@ public class TeleporterObject : InteractionBasedTeleporter
     {
         player = GameObject.Find("RigidBodyFPSController");
         player.transform.position = playerTeleportationTarget.transform.position;
+        if(this.tag == "TeleportationObject")
+            Destroy(this, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.1f);
+        //TODO: Else if (PlayerPicksUpKey){...}
     }
 }
