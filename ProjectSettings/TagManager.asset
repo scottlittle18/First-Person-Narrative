@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unlocked_Door
   - LockedDoor
+  - TeleportationObject
   layers:
   - Default
   - TransparentFX

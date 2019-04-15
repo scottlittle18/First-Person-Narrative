@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Door_Unlocked : MonoBehaviour, IOpenable
 {
-    MeshRenderer thing;
     private Animator doorAnim;
 
     // Start is called before the first frame update

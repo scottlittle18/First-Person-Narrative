@@ -69,21 +69,30 @@ public class PlayerInteractivity : MonoBehaviour
         Debug.Log("Click!");
         Debug.Log($"{hitInfo.collider.name} was the object hit");
 
-        switch (hitInfo.collider.gameObject.name)
+        if(hitInfo.collider.tag == "TeleportationObject")
         {
-            case "CarBody":
-                //Display Text for a set period of time
-                StartCoroutine(TextDisplayTimer());
-                break;
+            hitInfo.collider.GetComponent<Animator>().SetTrigger("Teleport");
+            //TODO: Debug
+            Debug.Log("Teleportation Anim_Trigger Activated!");
+        }
+        else
+        {
+            switch (hitInfo.collider.gameObject.name)
+            {
+                case "CarBody":
+                    //Display Text for a set period of time
+                    StartCoroutine(TextDisplayTimer());
+                    break;
 
-            case "TempleKeyStorage_Door_Unlocked":
-                //Open Door of the first Temple Key Storage building
-                hitInfo.collider.GetComponent<Door_Unlocked>().OpenDoor();
-                break;
+                case "TempleKeyStorage_Door_Unlocked":
+                    //Open Door of the first Temple Key Storage building
+                    hitInfo.collider.GetComponent<Door_Unlocked>().OpenDoor();
+                    break;
 
-            default:
-                Debug.Log("No Object Not Detected");
-                break;
+                default:
+                    Debug.Log("No Object Not Detected");
+                    break;
+            }
         }
     }
 }
