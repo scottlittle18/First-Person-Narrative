@@ -8,6 +8,8 @@ TagManager:
   - LockedDoor
   - TeleportationObject
   - TempleKey
+  - TempleDoor
+  - TextMeshObjects
   layers:
   - Default
   - TransparentFX
