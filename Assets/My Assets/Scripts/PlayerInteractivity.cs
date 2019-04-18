@@ -78,7 +78,7 @@ public class PlayerInteractivity : MonoBehaviour
     private void ClickHandler()
     {
         //TODO: Keeping in place for when other interactive objects are added.
-        Debug.Log($"{hitInfo.collider.name} was the object hit");
+        Debug.Log($"{hitInfo.collider.name} --with the tag-- {hitInfo.collider.tag} --was the object hit");
 
         if (hitInfo.collider.tag == "TeleportationObject")
         {

@@ -13,12 +13,4 @@ public class InteractionBasedTeleporter : MonoBehaviour
         //Use the script that will be attached to the teleporter objects to set this on Start or Awake
         teleportationTarget = target;
     }
-
-    //public virtual void TeleportPlayer()
-    //{
-    //    currentPlayerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    //    currentPlayerPosition = teleportationTarget;
-    //    //TODO: Debug
-    //    Debug.Log("Teleportation Complete!");
-    //}
 }
