@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Detects interactive elements the player is looking at
+///     Detects interactive elements the player is looking at
 /// </summary>
 public class PlayerInteractivity : MonoBehaviour
 {

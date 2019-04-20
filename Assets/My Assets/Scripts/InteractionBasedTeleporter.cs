@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///     This is the parent class of any objects that teleport the player based on
+/// the user's input.
+/// </summary>
+
 public class InteractionBasedTeleporter : MonoBehaviour
 {
     private Transform currentPlayerPosition;

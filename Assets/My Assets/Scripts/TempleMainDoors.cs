@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///     This script handles opening the main Temple doors.
+/// </summary>
+
 public class TempleMainDoors : MonoBehaviour
 {
     private Animator[] templeDoor_Anim;

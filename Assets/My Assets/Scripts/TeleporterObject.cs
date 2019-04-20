@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///     This script will be attached to any objects that will be used to teleport the
+/// player to another location. *This script is a sub-class of the 
+/// InteractionBasedTeleporter class.
+/// </summary>
+
 public class TeleporterObject : InteractionBasedTeleporter
 {
     [SerializeField]
