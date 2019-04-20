@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Unlocked_Door
+  - LockedDoor
+  - TeleportationObject
+  - TempleKey
+  - TempleDoor
+  - TextMeshObjects
   layers:
   - Default
   - TransparentFX
