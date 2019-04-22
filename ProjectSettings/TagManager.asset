@@ -10,6 +10,7 @@ TagManager:
   - TempleKey
   - TempleDoor
   - TextMeshObjects
+  - TorchFlame
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,8 @@ public class PlayerInteractivity : MonoBehaviour
     #region Non-Serialized Private Fields
     private RaycastHit hitInfo;
     private bool objectWasDetected;
+    private IInteractive currentlyLookedAtInteractive;
+
     //TODO: Hard Coded For Testing
     private GameObject carText;
     private GameObject lockedTempleText;
@@ -66,13 +68,27 @@ public class PlayerInteractivity : MonoBehaviour
         Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * maxRange, Color.red);
         
         objectWasDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxRange);
+
+        IInteractive interactive = null;
+
+        if (objectWasDetected)
+        {
+            interactive = hitInfo.collider.gameObject.GetComponent<IInteractive>();
+        }
+
+        if (interactive != null)
+        {
+            interactive.InteractWithObject();
+        }
     }
     private void Update()
     {
+        /*
         if (Input.GetButtonDown("Fire1") && objectWasDetected)
         {
             ClickHandler();
         }
+        */
     }
 
     private void ClickHandler()

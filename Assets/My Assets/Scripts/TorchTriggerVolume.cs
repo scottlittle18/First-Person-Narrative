@@ -3,26 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///     Will be attached to the trigger volume that the player will walk through at the bottom of the entry slope.
-/// Once triggered, this script will then turn on the fire particle effects attached to the torches.
+///     Activates the Fire Particle Effects on all of the torches upon collision with the player
 /// </summary>
 
 public class TorchTriggerVolume : MonoBehaviour
 {
-    private List<ParticleSystem> torchFires;
+    private GameObject[] torchFlameObjects;
 
-    // Start is called before the first frame update
     private void Awake()
     {
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("TorchFire"))
+        if (GameObject.FindGameObjectsWithTag("TorchFlame") != null)
         {
-            torchFires.Add(go.GetComponent<ParticleSystem>());
-        }
+            torchFlameObjects = GameObject.FindGameObjectsWithTag("TorchFlame");
 
-        foreach (ParticleSystem pS in torchFires)
+            //Turn off torch flames when the level begins
+            foreach (GameObject go in torchFlameObjects)
+            {
+                go.GetComponent<ParticleSystem>().Stop(true);
+            }
+        }
+        else
+            Debug.Log("No Game objects with the tag 'TorchFlame' were found"); //TODO: Debug Torch Trigger
+        // ^ Debug is left in just in case the asset changes later and no longer uses a particle effect
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.tag == "Player")
         {
-            pS.Stop();
-            //pS.emission.SetBurst(new ParticleSystem.Burst(0.5f, 100);
+            //Turn on torch flames when the player collides with the TorchTriggerVolume GameObject
+            foreach (GameObject go in torchFlameObjects)
+            {
+                go.GetComponent<ParticleSystem>().Play(true);
+            }
         }
     }
 }
