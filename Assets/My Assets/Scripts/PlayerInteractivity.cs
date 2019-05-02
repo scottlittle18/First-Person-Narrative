@@ -24,16 +24,25 @@ public class PlayerInteractivity : MonoBehaviour
     #region Non-Serialized Private Fields
     private RaycastHit hitInfo;
     private bool objectWasDetected;
-    private IInteractive currentlyLookedAtInteractive;
 
     //TODO: Hard Coded For Testing
-    private GameObject carText;
-    private GameObject lockedTempleText;
-    private GameObject lockedDoorText;
+    //private GameObject carText;
+    //private GameObject lockedTempleText;
+    //private GameObject lockedDoorText;
     #endregion
 
-    private GameObject[] textMeshObjects;
+    private IInteractive lookedAtInteractive;
 
+    public IInteractive LookedAtInteractive
+    {
+        get { return lookedAtInteractive; }
+        private set { lookedAtInteractive = value; }
+    }
+
+
+    //Commented Out Due to Refactoring
+    //private GameObject[] textMeshObjects;
+    /*
     IEnumerator FlexibleTextDisplayTimer(GameObject textMeshObject)
     {
         Debug.Log("Flexible Enumerator Entered");
@@ -61,7 +70,7 @@ public class PlayerInteractivity : MonoBehaviour
             TM.GetComponent<MeshRenderer>().enabled = false;
         }
     }
-
+    */
     private void FixedUpdate()
     {
         //Used to create a line that represents the length of the actual raycast
@@ -81,16 +90,15 @@ public class PlayerInteractivity : MonoBehaviour
             interactive.InteractWithObject();
         }
     }
+    /*
     private void Update()
     {
-        /*
-        if (Input.GetButtonDown("Fire1") && objectWasDetected)
+        if (Input.GetButtonDown("Interact") && objectWasDetected)
         {
-            ClickHandler();
+            //ClickHandler();
         }
-        */
     }
-
+    
     private void ClickHandler()
     {
         //TODO: Keeping in place for when other interactive objects are added.
@@ -143,4 +151,5 @@ public class PlayerInteractivity : MonoBehaviour
             }
         }
     }
+    */
 }

@@ -1,32 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-/// <summary>
-///     This UI TextMeshPro object displays info about the currently looked at interactive IInteractive.
-/// This text should be hidden if the player is not curently looking at an interactive element.
-/// </summary>
-
-public class LookedAtInteractiveDisplayTextMesh : MonoBehaviour
+public class InteractWithLookedAtObject : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
-    private TextMeshProUGUI displayText;
 
-    private void Awake()
+    // Update is called once per frame
+    void Update()
     {
-        displayText = GetComponent<TextMeshProUGUI>();
-        UpdateDisplayText();
-    }
-
-    private void UpdateDisplayText()
-    {
-        if (lookedAtInteractive != null)
+        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null)
         {
-            displayText.text = lookedAtInteractive.DisplayText;
+            lookedAtInteractive.InteractWithObject();
         }
-        else
-            displayText.text = string.Empty;
     }
 
     /// <summary>
@@ -36,7 +22,7 @@ public class LookedAtInteractiveDisplayTextMesh : MonoBehaviour
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;
-        UpdateDisplayText();
+
     }
 
     #region Event Subscription / Unsubscription
