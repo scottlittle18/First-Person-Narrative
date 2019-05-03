@@ -6,6 +6,10 @@ using UnityEngine;
 public class Door : InteractiveObject
 {
     private Animator doorAnimator;
+    private bool isOpen = false;
+
+    //Used to quickly access the animator parameter that opens the door
+    private int doorOpenAnimParameter = Animator.StringToHash("beingOpenedByPlayer");
 
     /// <summary>
     /// Using a constructor here to initialize displayText in the editor.
@@ -23,7 +27,12 @@ public class Door : InteractiveObject
 
     public override void InteractWithObject()
     {
-        base.InteractWithObject();
-        doorAnimator.SetBool("beingOpenedByPlayer", true);
+        if (!isOpen)
+        {
+            base.InteractWithObject();
+            doorAnimator.SetBool(doorOpenAnimParameter, true);
+            displayText = string.Empty;
+            isOpen = true;
+        }
     }
 }
