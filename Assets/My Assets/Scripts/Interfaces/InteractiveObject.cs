@@ -9,8 +9,7 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour, IInteractive
 {
     [SerializeField]
-    private string displayText = nameof(InteractiveObject);
-    [SerializeField]
+    protected string displayText = nameof(InteractiveObject);
     private AudioSource interactionSFX;
 
     public string DisplayText => displayText;
@@ -20,7 +19,7 @@ public class InteractiveObject : MonoBehaviour, IInteractive
         interactionSFX = GetComponent<AudioSource>();
     }
 
-    public void InteractWithObject()
+    public virtual void InteractWithObject()
     {
         try
         {
