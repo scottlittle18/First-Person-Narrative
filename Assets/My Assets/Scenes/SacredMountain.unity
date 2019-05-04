@@ -3421,7 +3421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e97c3c5783e8c640b20e460a3fa1475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorAnim: {fileID: 0}
 --- !u!95 &147500604
 Animator:
   serializedVersion: 3
@@ -6540,7 +6539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e97c3c5783e8c640b20e460a3fa1475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorAnim: {fileID: 0}
 --- !u!95 &393118920
 Animator:
   serializedVersion: 3
@@ -19356,7 +19354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e97c3c5783e8c640b20e460a3fa1475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorAnim: {fileID: 0}
 --- !u!95 &1493450692
 Animator:
   serializedVersion: 3
@@ -20229,7 +20226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15028
+  m_Name: pb_Mesh15112
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -23122,6 +23119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: Temple Storage Location 1
+  locked: 1
+  lockedDisplayText: Locked
+  lockedAudioClip: {fileID: 8300000, guid: f40d05904d672314ea7a3c02e819ac1d, type: 3}
+  openAudioClip: {fileID: 8300000, guid: bbf29f3794f82cb4e9946b367f1d51c0, type: 3}
 --- !u!82 &1907021717
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23132,7 +23133,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 976bdba82556611409c2e3bd2648d014, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bbf29f3794f82cb4e9946b367f1d51c0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
