@@ -6,8 +6,12 @@ using UnityEngine;
 public class Door : InteractiveObject
 {
     [SerializeField]
-    [Tooltip("Check this box to lock this door.")]
-    private bool locked;
+    [Tooltip("Assigning a key here will lock the door. If the player has the key in their inventory, they can open the locked door.")]
+    private InventoryObject key;
+
+    [SerializeField]
+    [Tooltip("If this is checked, the associated key will be removed from the player's inventory when the door is unlocked.")]
+    private bool consumesKey;
 
     [SerializeField]
     [Tooltip("The text that is displayed when the player looks at the door while it's locked.")]
@@ -21,10 +25,25 @@ public class Door : InteractiveObject
     [Tooltip("Play this audio clip when the player opens the door.")]
     private AudioClip openAudioClip;
 
-    public override string DisplayText => locked ? lockedDisplayText : base.DisplayText;
+    public override string DisplayText
+    {
+        get
+        {
+            string toReturn;
 
+            if (isLocked)
+                toReturn = HasKey ? $"Use {key.ObjectName}" : lockedDisplayText;
+            else
+                toReturn = base.DisplayText;
+
+            return toReturn;
+        }
+    }
+
+    private bool HasKey => PlayerInventory.InventoryObjects.Contains(key);
     private Animator doorAnimator;
     private bool isOpen = false;
+    private bool isLocked;
     //Used to quickly access the animator parameter that opens the door
     private int doorOpenAnimParameter = Animator.StringToHash("beingOpenedByPlayer");
 
@@ -40,22 +59,41 @@ public class Door : InteractiveObject
     {
         base.Awake();
         doorAnimator = GetComponent<Animator>();
+        InitializeIsLocked();
+    }
+
+    private void InitializeIsLocked()
+    {
+        if (key != null)
+            isLocked = true;
     }
 
     public override void InteractWithObject()
     {
-        if (!locked)
+        if (!isOpen)
         {
-            interactionSFX.clip = openAudioClip;
-            doorAnimator.SetBool(doorOpenAnimParameter, true);
-            displayText = string.Empty;
-            isOpen = true;
+            if(isLocked && !HasKey)
+            {
+                interactionSFX.clip = lockedAudioClip;
+            }
+            else //if it's not locked, or if it's locked and we have the key...
+            {
+                interactionSFX.clip = openAudioClip;
+                doorAnimator.SetBool(doorOpenAnimParameter, true);
+                displayText = string.Empty;
+                isOpen = true;
+                UnlockDoor();
+            }
         }
-        else //if door is locked...
-        {
-            interactionSFX.clip = lockedAudioClip;
-        }
+        
+    }
 
-        base.InteractWithObject();
+    private void UnlockDoor()
+    {
+        isLocked = false;
+        if (key != null && consumesKey)
+        {
+            PlayerInventory.InventoryObjects.Remove(key);
+        }
     }
 }
