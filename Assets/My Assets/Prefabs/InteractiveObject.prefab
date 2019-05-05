@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7956236785376293045}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -41.691166, y: 19.42049, z: 51.3413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -322,8 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c49264a5ddbb94a8c3aaba78dc6fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: InteractiveObject
-  interactionSFX: {fileID: 0}
+  displayText: Just a plain InteractiveObject...
 --- !u!82 &7956236785376293052
 AudioSource:
   m_ObjectHideFlags: 0
@@ -336,16 +335,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 976bdba82556611409c2e3bd2648d014, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 5
+  DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -357,20 +356,20 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -2.5241237
-      outSlope: -2.5241237
+      inSlope: -1.9006213
+      outSlope: -1.9006213
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.45180026
+      outWeight: 0.16666666
     - serializedVersion: 3
-      time: 0.47839355
-      value: 0.0042419434
-      inSlope: -0.33012646
-      outSlope: -0.33012646
+      time: 1
+      value: 0
+      inSlope: -0.3354034
+      outSlope: -0.3354034
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.8409042
+      inWeight: 0.30555558
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -409,7 +408,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.008646011
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0

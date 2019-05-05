@@ -8,11 +8,16 @@ using UnityEngine;
 public class InteractWithLookedAtObject : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
+    
+    private bool inventoryOpen;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null)
+        //Used to check if the player is currently in their inventory...
+        inventoryOpen = InventoryMenu.Instance.IsVisible;
+        //If they are, and they try to interact with anything outside of the InventoryMenu, they won't be able to.
+        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null && !inventoryOpen)
         {
             lookedAtInteractive.InteractWithObject();
         }
@@ -25,7 +30,6 @@ public class InteractWithLookedAtObject : MonoBehaviour
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;
-
     }
 
     #region Event Subscription / Unsubscription

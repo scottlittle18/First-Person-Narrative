@@ -20,7 +20,9 @@ public class InventoryObject : InteractiveObject
     [Tooltip("Icon to display for this item in the inventory menu.")]
     private Sprite icon;
 
+    public Sprite Icon => icon;
     public string ObjectName => objectName;
+    public string Description => description;
 
     private Renderer inventoryObjectRenderer;
     private Collider inventroyObjectCollider;
@@ -47,6 +49,7 @@ public class InventoryObject : InteractiveObject
     {
         base.InteractWithObject();
         PlayerInventory.InventoryObjects.Add(this);
+        InventoryMenu.Instance.AddItemToMenu(this);
         inventoryObjectRenderer.enabled = false;
         inventroyObjectCollider.enabled = false;
         //TODO: Debug for InventoryMenu Script
