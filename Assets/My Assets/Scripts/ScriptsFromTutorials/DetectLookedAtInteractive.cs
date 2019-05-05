@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used to identify the object the player is looking at.
+/// </summary>
 public class DetectLookedAtInteractive : MonoBehaviour
 {
     #region Serialized Fields

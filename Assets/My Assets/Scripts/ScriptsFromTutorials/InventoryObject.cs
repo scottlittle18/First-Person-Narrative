@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Attached to objects that can be added to the player's inventory.
+/// </summary>
 public class InventoryObject : InteractiveObject
 {
     [SerializeField]
@@ -46,5 +49,7 @@ public class InventoryObject : InteractiveObject
         PlayerInventory.InventoryObjects.Add(this);
         inventoryObjectRenderer.enabled = false;
         inventroyObjectCollider.enabled = false;
+        //TODO: Debug for InventoryMenu Script
+        Debug.Log($"Inventory menu game object name: {InventoryMenu.Instance.name}");
     }
 }

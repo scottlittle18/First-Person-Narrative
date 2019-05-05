@@ -5,7 +5,6 @@ using UnityEngine;
 /// <summary>
 /// Interface for interactive objects
 /// </summary>
-
 public interface IInteractive
 {
     string DisplayText { get; }

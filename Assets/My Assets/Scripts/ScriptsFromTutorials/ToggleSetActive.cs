@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Toggles the specified objects visible or invisible.
+/// </summary>
 public class ToggleSetActive : InteractiveObject
 {
     [SerializeField]

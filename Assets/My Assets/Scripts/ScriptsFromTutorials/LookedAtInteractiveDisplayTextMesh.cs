@@ -7,7 +7,6 @@ using TMPro;
 ///     This UI TextMeshPro object displays info about the currently looked at interactive IInteractive.
 /// This text should be hidden if the player is not curently looking at an interactive element.
 /// </summary>
-
 public class LookedAtInteractiveDisplayTextMesh : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;

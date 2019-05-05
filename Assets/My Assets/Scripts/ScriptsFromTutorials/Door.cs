@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used to control the logic and animation for doors.
+/// </summary>
 [RequireComponent(typeof(Animator))]
 public class Door : InteractiveObject
 {

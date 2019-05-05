@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the input and logic related to interacting with targeted objects.
+/// </summary>
 public class InteractWithLookedAtObject : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
