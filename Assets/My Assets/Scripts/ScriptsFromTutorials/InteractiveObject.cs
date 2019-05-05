@@ -31,7 +31,7 @@ public class InteractiveObject : MonoBehaviour, IInteractive
 
             throw new System.Exception("Missing AudioSource component or Audio Clip: InteractiveObject requires an AudioSource with an assigned AudioClip.");
         }
-        //TODO: Interact w/ Object Debug.Log
+        //TODO: Interaction w/ Object Debug.Log
         Debug.Log($"Player just interacted with {gameObject.name}.");
     }
 }

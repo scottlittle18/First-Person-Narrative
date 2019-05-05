@@ -51,7 +51,7 @@ public class Door : InteractiveObject
     private int doorOpenAnimParameter = Animator.StringToHash("beingOpenedByPlayer");
 
     /// <summary>
-    /// Using a constructor here to initialize displayText in the editor.
+    /// Using a ----Constructor---- here to initialize displayText in the editor.
     /// </summary>
     public Door()
     {

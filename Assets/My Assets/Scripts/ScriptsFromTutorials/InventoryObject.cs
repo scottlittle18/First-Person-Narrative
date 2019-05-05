@@ -33,6 +33,7 @@ public class InventoryObject : InteractiveObject
         inventroyObjectCollider = GetComponent<Collider>();
     }
 
+    //----Constructor----
     public InventoryObject()
     {
         displayText = $"Take {objectName}";
