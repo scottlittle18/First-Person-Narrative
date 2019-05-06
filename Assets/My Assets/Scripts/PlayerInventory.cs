@@ -5,19 +5,7 @@ using UnityEngine;
 /// <summary>
 ///     This script manages the player's inventory.
 /// </summary>
-
-public class PlayerInventory : MonoBehaviour
+public static class PlayerInventory
 {
-    public bool hasKey = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public void PickupKey()
-    {
-        hasKey = true;
-    }
+    public static List<InventoryObject> InventoryObjects { get; } = new List<InventoryObject>();
 }
