@@ -25,12 +25,14 @@ public class InventoryObject : InteractiveObject
     public string Description => description;
 
     private Renderer inventoryObjectRenderer;
-    private Collider inventroyObjectCollider;
+    private Collider inventoryObjectCollider;
+    public Renderer InventoryObjectRenderer { get { return inventoryObjectRenderer; } set { inventoryObjectRenderer = value; } }
+    public Collider InventoryObjectCollider { get { return inventoryObjectCollider; } set { inventoryObjectCollider = value; } }
 
     private void Start()
     {
         inventoryObjectRenderer = GetComponent<Renderer>();
-        inventroyObjectCollider = GetComponent<Collider>();
+        inventoryObjectCollider = GetComponent<Collider>();
     }
 
     //----Constructor----

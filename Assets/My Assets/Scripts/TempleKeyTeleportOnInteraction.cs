@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Used to teleport the player from one location to another.
-/// </summary>
-public class TeleporterObject : InteractiveObject
+public class TempleKeyTeleportOnInteraction : InventoryObject
 {
     [SerializeField]
     [Tooltip("The Game Object that will act as the teleportation target.")]
@@ -13,6 +10,13 @@ public class TeleporterObject : InteractiveObject
 
     private Animator teleporterAnimator;
     private Transform playerTransform;
+
+    public TempleKeyTeleportOnInteraction()
+    {
+        displayText = $"Take {ObjectName}";
+        InventoryObjectRenderer = GetComponent<Renderer>();
+        InventoryObjectCollider = GetComponent<Collider>();
+    }
 
     private void Start()
     {
@@ -25,6 +29,12 @@ public class TeleporterObject : InteractiveObject
     {
         teleporterAnimator.SetTrigger("Teleport");
         base.InteractWithObject();
+        PlayerInventory.InventoryObjects.Add(this);
+        InventoryMenu.Instance.AddItemToMenu(this);
+        InventoryObjectRenderer.enabled = false;
+        InventoryObjectCollider.enabled = false;
+        //TODO: Debug for InventoryMenu Script
+        Debug.Log($"Inventory menu game object name: {InventoryMenu.Instance.name}");
     }
 
     public void TeleportPlayer()

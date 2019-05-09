@@ -21015,10 +21015,11 @@ GameObject:
   - component: {fileID: 1515542038}
   - component: {fileID: 1515542037}
   - component: {fileID: 1515542036}
-  - component: {fileID: 1515542035}
   - component: {fileID: 1515542034}
   - component: {fileID: 1515542042}
+  - component: {fileID: 1515542035}
   - component: {fileID: 1515542041}
+  - component: {fileID: 1515542043}
   m_Layer: 0
   m_Name: TempleKey(Temp)
   m_TagString: TempleKey
@@ -21052,7 +21053,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515542033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca791741aa100e4fb0711078988d3d3, type: 3}
   m_Name: 
@@ -21354,7 +21355,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515542033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8e96bc96f14a1440acd12d14557973e, type: 3}
   m_Name: 
@@ -21459,6 +21460,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1515542043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515542033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1044ac299dd9aad4fb049124a23729c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: Take Strange Key?
+  objectName: Strange Key
+  description: It looks like it fits one of the key holes on the door, but I need
+    to make sure I find the other first.
+  icon: {fileID: 21300000, guid: 6f3360ddb09b98c4585adf10f6881aaf, type: 3}
 --- !u!43 &1532955380
 Mesh:
   m_ObjectHideFlags: 0
@@ -26870,7 +26888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.27
+      value: 63.19
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26878,7 +26896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.539997
+      value: 41.55
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalRotation.x
@@ -97924,7 +97942,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 4512832c11d5f744490e74653d2308ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99124,7 +99142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d953dbf1d3eb08c48a4c1c433bea05d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99225,7 +99243,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 790c32450aa1e3e498802ea9ee0c3548, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
