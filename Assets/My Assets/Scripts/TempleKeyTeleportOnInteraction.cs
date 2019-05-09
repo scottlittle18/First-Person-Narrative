@@ -14,33 +14,47 @@ public class TempleKeyTeleportOnInteraction : InventoryObject
     public TempleKeyTeleportOnInteraction()
     {
         displayText = $"Take {ObjectName}";
-        InventoryObjectRenderer = GetComponent<Renderer>();
-        InventoryObjectCollider = GetComponent<Collider>();
     }
 
     private void Start()
     {
         displayText = nameof(TeleporterObject);
-
+        InventoryObjectRenderer = GetComponent<Renderer>();
+        InventoryObjectCollider = GetComponent<Collider>();
         teleporterAnimator = GetComponent<Animator>();
     }
 
     public override void InteractWithObject()
     {
         teleporterAnimator.SetTrigger("Teleport");
-        base.InteractWithObject();
+
+        try
+        {
+            interactionSFX.PlayOneShot(interactionSFX.clip);
+        }
+        catch (System.Exception)
+        {
+
+            throw new System.Exception("Missing AudioSource component or Audio Clip: InteractiveObject requires an AudioSource with an assigned AudioClip.");
+        }
+
         PlayerInventory.InventoryObjects.Add(this);
         InventoryMenu.Instance.AddItemToMenu(this);
         InventoryObjectRenderer.enabled = false;
         InventoryObjectCollider.enabled = false;
+        //base.InteractWithObject();
+        //PlayerInventory.InventoryObjects.Add(this);
+        //InventoryMenu.Instance.AddItemToMenu(this);
+
         //TODO: Debug for InventoryMenu Script
         Debug.Log($"Inventory menu game object name: {InventoryMenu.Instance.name}");
     }
 
-    public void TeleportPlayer()
+    public void TeleportPlayerOnKeyPickup()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerTransform.position = playerTeleportationTarget.transform.position;
-        Destroy(playerTeleportationTarget);
+        //InventoryObjectRenderer.enabled = false;
+        //InventoryObjectCollider.enabled = false;
     }
 }
