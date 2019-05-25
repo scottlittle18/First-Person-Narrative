@@ -12,14 +12,11 @@ public class TeleporterObject : InteractiveObject
     private GameObject playerTeleportationTarget;
 
     private Animator teleporterAnimator;
-
     private Transform playerTransform;
-    private bool IsKey => GetComponent<InventoryObject>();
 
     private void Start()
     {
-        if(!IsKey)
-            displayText = nameof(TeleporterObject);
+        displayText = nameof(TeleporterObject);
 
         teleporterAnimator = GetComponent<Animator>();
     }
@@ -27,11 +24,7 @@ public class TeleporterObject : InteractiveObject
     public override void InteractWithObject()
     {
         teleporterAnimator.SetTrigger("Teleport");
-
-        if (!IsKey)
-        {
-            base.InteractWithObject();
-        }
+        base.InteractWithObject();
     }
 
     public void TeleportPlayer()
@@ -40,6 +33,4 @@ public class TeleporterObject : InteractiveObject
         playerTransform.position = playerTeleportationTarget.transform.position;
         Destroy(playerTeleportationTarget);
     }
-
-    //private IEnumerator 
 }

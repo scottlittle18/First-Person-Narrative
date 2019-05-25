@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/My Assets/Scenes/TitleMenu.unity
+    guid: 320562dde64ccd44a99deeb558577822
+  - enabled: 1
+    path: Assets/My Assets/Scenes/SacredMountain.unity
+    guid: 1e7f7d1afa2349544be09f894cb865e3
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Credits.unity
+    guid: b69e62ee7ef8a7148871708d5a6be89d
   m_configObjects: {}

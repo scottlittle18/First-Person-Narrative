@@ -9,19 +9,30 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void PlayButtonClicked()
     {
-        //int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene + 1);
+    }
 
-        //SceneManager.LoadScene(currentScene + 1);
-        //TODO: Debug
-        Debug.Log("Start Button Clicked!");
+    public void CreditsButtonClicked()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void ExitButtonClicked()
     {
-        //TODO: Debug Quit
-        Debug.Log("Quit!");
         Application.Quit();
+    }
+
+    public void ReturnToTitleScreen()
+    {
+        SceneManager.LoadScene(0);
     }
 }

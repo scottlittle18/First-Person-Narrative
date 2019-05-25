@@ -25,12 +25,14 @@ public class InventoryObject : InteractiveObject
     public string Description => description;
 
     private Renderer inventoryObjectRenderer;
-    private Collider inventroyObjectCollider;
+    private Collider inventoryObjectCollider;
+    public Renderer InventoryObjectRenderer { get { return inventoryObjectRenderer; } set { inventoryObjectRenderer = value; } }
+    public Collider InventoryObjectCollider { get { return inventoryObjectCollider; } set { inventoryObjectCollider = value; } }
 
     private void Start()
     {
         inventoryObjectRenderer = GetComponent<Renderer>();
-        inventroyObjectCollider = GetComponent<Collider>();
+        inventoryObjectCollider = GetComponent<Collider>();
     }
 
     //----Constructor----
@@ -52,7 +54,7 @@ public class InventoryObject : InteractiveObject
         PlayerInventory.InventoryObjects.Add(this);
         InventoryMenu.Instance.AddItemToMenu(this);
         inventoryObjectRenderer.enabled = false;
-        inventroyObjectCollider.enabled = false;
+        inventoryObjectCollider.enabled = false;
         //TODO: Debug for InventoryMenu Script
         Debug.Log($"Inventory menu game object name: {InventoryMenu.Instance.name}");
     }
