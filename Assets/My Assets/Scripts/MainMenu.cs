@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void PlayButtonClicked()
