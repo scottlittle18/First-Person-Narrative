@@ -4,12 +4,13 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: WallTall_Corner_mat
-  m_Shader: {fileID: 4800000, guid: e95b884462a6a7a4eb11404c32625407, type: 3}
-  m_ShaderKeywords: _NORMALMAP _USE_MASK_ON
-  m_LightmapFlags: 4
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _NORMALMAP _OCCLUSIONMAP
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -91,8 +92,11 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaClip: 0
     - _Amount: 0.494
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DetailScale: 4
@@ -106,13 +110,16 @@ Material:
     - _MossAmount: 1
     - _OcclusionStrength: 0.489
     - _Parallax: 0.02
+    - _ReceiveShadows: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _TopGlossiness: 0
     - _TopMetallic: 0
     - _UVSec: 0
     - _Use_Mask: 1
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
