@@ -1,0 +1,5 @@
+Butterfly Animation Notes:
+     - Flap Rate: ~5-12 times per second
+     - Flap slower when flying leisurly, such as during migration
+
+Use a second layer on the Planet material to add clouds that can then be animated with shader graph.
